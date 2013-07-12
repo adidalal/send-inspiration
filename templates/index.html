@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <!--Coded by Aditya Dalal for HackRU Spring 2013-->
+        <title>Send Inspiration!</title>
+        <link rel="icon" type="image/png" href="/static/imgs/favicon.ico">
+        <script src="/static/js/bootstrap.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" media="screen" title="master" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/bootstrap-responsive.css" type="text/css" media="screen" title="master" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    </head>
+<br>
+	<body style="background-color:#B8B8BA">
+        <div class="container">
+            <div class="row">
+                <div class="span2">
+                </div>
+                <div id="logoDiv" class="span8" align="center">
+        <script type="text/javascript">
+			 var imlocation = "/static/imgs/";
+			 var currentdate = 0;
+			 var image_number = 0;
+			 function ImageArray (n) {
+			   this.length = n;
+			   for (var i =1; i <= n; i++) {
+				 this[i] = ' '
+			   }
+			 }
+			 image = new ImageArray(10)
+			 image[0] = 'logo-0.jpg'
+			 image[1] = 'logo-1.jpg'
+			 image[2] = 'logo-2.jpg'
+			 image[3] = 'logo-3.jpg'
+			 image[4] = 'logo-4.jpg'
+			 image[5] = 'logo-5.jpg'
+			 image[6] = 'logo-6.jpg'
+			 image[7] = 'logo-7.jpg'
+			 image[8] = 'logo-8.jpg'
+			 image[9] = 'logo-9.jpg'
+
+			 var rand = 60/image.length
+			 function randomimage() {
+				currentdate = new Date()
+				image_number = currentdate.getSeconds()
+				image_number = Math.floor(image_number/rand)
+				return(image[image_number])
+			 }
+			 document.write("<img src='" + imlocation + randomimage()+ "'>");
+          </script>
+                </div>
+            </div>
+<br>
+<br>
+            <div class="row">
+                <div class="span3">
+                </div>
+				<form action='http://sendinspiration.herokuapp.com/quotes' method='get'>
+					<div id="everythingElse" class="span6" align="center">
+						<div id='textGroup' class='custom-hero'>
+							<h2>Enter the number or email to send an inspirational quote to!</h2>
+							<input type="text" name="number" id="number" placeholder="Phone Number">
+							<input type="text" name="email" id="email" placeholder="Email">
+						</div>
+						<br>
+						<div class="btn-group" align="center">
+							<button class="btn btn-success" type="submit" id="sendSMS" name="sendtext">Send Message</button>
+						</div>
+					</div>
+                </form>
+            </div>
+
+
+        </body>
+        <footer>
+		  <p>Developed by: Aditya Dalal</p>
+		</footer>
+</html>
+

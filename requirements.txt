@@ -1,0 +1,8 @@
+Flask==0.9
+Jinja2==2.6
+Werkzeug==0.8.3
+heroku==0.1.2
+httplib2==0.7.7
+requests==1.1.0
+twilio==3.4.3
+sendgrid==0.1.2
